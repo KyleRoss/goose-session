@@ -4,6 +4,7 @@ A lightweight [Express 4.x](http://expressjs.com/) Session Store using the [Mong
 _Why reconnect to the same database twice?_
 
 **goose-session vs. the others**
+
 | Feature                                                      | goose-session      | the others
 | ------------------------------------------------------------ | ------------------ | ------------
 | Use your pre-existing Mongoose connection                    | :white_check_mark: | :x:
@@ -102,6 +103,7 @@ Add express-session middleware with the `store` set to goose-session:
 The goose-session constructor that provides all the required methods to express-session for storing sessions.
 
 *Arguments*
+
 | Required? | Argument | Type         | Description
 | --------- | -------- | ------------ | ------------------------------------------
 | Yes       | mongoose | _Mongoose()_ | The mongoose instance `require('mongoose')`.
