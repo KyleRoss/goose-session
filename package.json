@@ -1,0 +1,32 @@
+{
+  "name": "goose-session",
+  "version": "1.0.0",
+  "description": "A lightweight Express Session Store using the Mongoose ODM",
+  "main": "goose-session.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/KyleRoss/goose-session.git"
+  },
+  "keywords": [
+    "mongoose",
+    "session",
+    "mongoose-session",
+    "express",
+    "store",
+    "goose",
+    "goosesession",
+    "express-session",
+    "mongoose-store"
+  ],
+  "author": "Kyle Ross",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/KyleRoss/goose-session/issues"
+  },
+  "homepage": "https://github.com/KyleRoss/goose-session",
+  "dependencies": {
+    "express-session": "^1.11.3",
+    "lodash.assign": "^3.2.0",
+    "ms": "^0.7.1"
+  }
+}
