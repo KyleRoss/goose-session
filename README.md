@@ -1,5 +1,7 @@
 # goose-session
-A lightweight [Express 4.x](http://expressjs.com/) Session Store using the [Mongoose ODM](http://mongoosejs.com/). This session store takes a pre-existing connection using Mongoose and uses that for the session store instead of opening a new connection. It provides an easy way to store sessions in MongoDB without flooding connections along with allowing full configuration over your connection and error handling.
+[![npm](https://img.shields.io/npm/v/npm.svg?style=flat-square)](https://www.npmjs.com/package/goose-session) [![GitHub issues](https://img.shields.io/github/issues/badges/shields.svg?style=flat-square)](https://github.com/KyleRoss/goose-session/issues) [![npm](https://img.shields.io/npm/dm/localeval.svg?style=flat-square)](https://www.npmjs.com/package/goose-session)
+
+A lightweight [Express 3.x / 4.x](http://expressjs.com/) Session Store using an established connection through [Mongoose ODM](http://mongoosejs.com/). This session store takes a pre-existing connection using Mongoose and uses that for the session store instead of opening a new connection. It provides an easy way to store sessions in MongoDB without flooding connections along with allowing full configuration over your connection and error handling.
 
 _Why reconnect to the same database twice?_
 
@@ -25,13 +27,14 @@ Install via npm:
 
 You should have already installed the following dependencies to your application:
 
-    npm install express express-session --save
+    npm install express express-session cookie-parser --save
 
 
 ## Full Example
 
     var express = require('express'),
         session = require('express-session'),
+        cookieParser = require('cookie-parser'),
         gooseSession = require('goose-session'),
         mongoose = require('mongoose'),
         app = express();
@@ -50,6 +53,9 @@ You should have already installed the following dependencies to your application
             socketOptions: { keepAlive: 1 }
         }
     });
+    
+    // Add cookie parser middleware (needed for sessions)
+    app.use(cookieParser());
     
     // Add express-session middleware
     app.use(session({
